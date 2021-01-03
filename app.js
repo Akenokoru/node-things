@@ -1,7 +1,9 @@
 const express = require('express');
+const ejs = require('ejs');
 const app = express();
 // 配置模板引擎
-app.set('view engine', 'ejs');
+app.engine('html', ejs.__express);
+app.set('view engine', 'html');
 // ejs渲染页面路由
 app.get('/index', (req, res) => {
   let title = '首页'
