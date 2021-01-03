@@ -4,6 +4,8 @@ const app = express();
 // 配置模板引擎
 app.engine('html', ejs.__express);
 app.set('view engine', 'html');
+// 配置静态web目录
+app.use(express.static('static'));
 // ejs渲染页面路由
 app.get('/index', (req, res) => {
   let title = '首页'
